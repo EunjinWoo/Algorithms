@@ -1,2 +1,2 @@
 # Algorithms
-This is an auto push repository for Baekjoon Online Judge.
+This is an auto push repository for Baekjoon Online Judge & Programmers
