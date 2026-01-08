@@ -20,7 +20,7 @@ class Solution {
     }
     
     public boolean dfs(String start, List<String> answer, boolean[] visited, String[][] tickets, int usedCnt) {
-        if (usedCnt == tickets.length) {
+        if (usedCnt >= tickets.length) {
             return true;
         }
         
