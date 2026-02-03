@@ -69,7 +69,7 @@ class Solution {
             rightLeftTravelCost = 2*(startA-1) + (length-1-endA);
         }
         
-        // 3) -> <- 방향으로 쭉
+        // 4) <- -> 방향으로 쭉
         int leftRightTravelCost = length-1;
         if (startA >= 1 && endA < length-1) {
             leftRightTravelCost = (startA-1) + 2*(length-1-endA);
