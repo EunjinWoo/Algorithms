@@ -10,19 +10,19 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
-        int distance = 0;
+        long distance = 0;
         int prevLength = 0;
         int length = 0;
 
-        ArrayList<int[]> vdList = new ArrayList<>(); // value-distance List
-        HashMap<Integer, Integer> vdMap = new HashMap<>(); // value-distance Map
+        ArrayList<long[]> vdList = new ArrayList<>(); // value-distance List
+        HashMap<Long, Long> vdMap = new HashMap<>(); // value-distance Map
 
         // A_N까지 다 담기 일단 distance는 0으로
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            int value = Integer.parseInt(st.nextToken());
-            vdList.add(new int[]{value, 0});
-            vdMap.put(value, 0);
+            long value = Long.parseLong(st.nextToken());
+            vdList.add(new long[]{value, 0});
+            vdMap.put(value, 0L);
         }
         length = vdList.size();
 
@@ -34,9 +34,9 @@ public class Main {
             for (int i = prevLength; i < length; i++) {
                 for (int p = 0; p < 2; p++) {
                     int delta = (p==0) ? 1 : -1;
-                    int target = vdList.get(i)[0] + delta;
+                    long target = vdList.get(i)[0] + delta;
                     if (!vdMap.containsKey(target) && target > -1 && target <= L) { // value가 중복된 값은 넣지 않음
-                        vdList.add(new int[]{target, distance});
+                        vdList.add(new long[]{target, distance});
                         vdMap.put(target, distance);
 
                         if (vdList.size() >= K) break; // K개까지만 추가
